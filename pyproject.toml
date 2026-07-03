@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "space-invaders"
+version = "0.1.0"
+description = "Space Invaders clone with Unity-inspired Python/Pygame architecture"
+authors = ["Gustavo Oliveira"]
+readme = "README.md"
+packages = [{ include = "space_invaders", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pygame-ce = "^2.5"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-cov = "^5.0"
+
+[tool.poetry.scripts]
+space-invaders = "space_invaders.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
