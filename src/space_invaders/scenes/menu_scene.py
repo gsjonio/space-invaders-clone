@@ -11,6 +11,7 @@ from space_invaders.core.scene_manager import SceneManager
 from space_invaders.scripts.invader_controller import INVADER_SPRITES
 from space_invaders.scripts.ufo_controller import UFO_SPRITE
 from space_invaders.settings import (
+    COLOR_CYAN,
     COLOR_GREEN,
     COLOR_RED,
     COLOR_WHITE,
@@ -77,6 +78,21 @@ class MenuScene(Scene):
                     UI_FONT_SIZE,
                     COLOR_WHITE,
                     pygame.Vector2(center_x + 40, y),
+                )
+            )
+
+        controls = [
+            "MOVE: ARROW KEYS    SHOOT: SPACE",
+            "PAUSE: P    MENU/QUIT: ESC",
+        ]
+        for i, line in enumerate(controls):
+            self.instantiate(
+                create_text_object(
+                    "Controls",
+                    line,
+                    UI_FONT_SIZE,
+                    COLOR_CYAN,
+                    pygame.Vector2(center_x, 420 + i * 26),
                 )
             )
 
